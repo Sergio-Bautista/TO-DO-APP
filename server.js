@@ -30,6 +30,25 @@ app.get("/", (req, res) =>{
 })
 
 
+app.post("/addTask", (req, res) => {
+    db.collection("tasks").insertOne({task: req.body.task, completed: false})
+    .then( () => {
+        console.log("Task Added!!!");
+        res.redirect("/")
+    })
+    .catch(error => console.error(error))
+});
+
+app.delete("/deleteTask", (req, res) =>{
+    db.collection("tasks").deleteOne({task:req.body.task})
+    .then(() => {
+        console.log("Task deleted!!!");
+        res.json("Task Deleted")
+    })
+    .catch(error => console.error(error))
+})
+
+
 
 app.listen(PORT, () =>{
     console.log(`Server running on port: ${PORT}`)
