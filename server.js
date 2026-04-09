@@ -14,9 +14,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 // sets the APP name and the URL for the database using the .env file
-let db, 
-    mongoURL = process.env.db_URL,
-    dbName = "TO-DO-APP"
+let db
+const mongoURL = process.env.db_URL
+const dbName = "TO-DO-APP"
 
 // connects to the database and sets the name 
 MongoClient.connect(mongoURL)
@@ -29,8 +29,7 @@ MongoClient.connect(mongoURL)
 app.get("/", (req, res) =>{
     // gets the tasks from the db and converts them into an array of objects
     const tasks = db.collection("tasks").find().toArray()
-    console.log(tasks)
-    
+
     // passes the array of 'tasks' to the ejs file to render
     tasks.then(data =>{
         res.render('index.ejs', { info: data})
@@ -51,14 +50,23 @@ app.post("/addTask", (req, res) => {
     .catch(error => console.error(error))
 });
 
+
 // delete a task route 
 app.delete("/deleteTask", (req, res) =>{
     // looks for the value of the input in the html/ejs file in the db and removes it 
-    db.collection('tasks').deleteOne({ task: req.body.value })
+    
+    const taskName = req.body.value;
+
+    db.collection('tasks').deleteMany({ task: taskName})
+
+
+    // db.collection('tasks').deleteOne({ task: req.body.value})
 
     // once the task is deleted, respond to the client with json 
     .then(result => {
         console.log("task deleted")
+        console.log(req.body.value)
+        console.log(`deleted ${result.deletedCount}`)
         res.json("task deleted")
     })
     .catch(error => console.error(error))
