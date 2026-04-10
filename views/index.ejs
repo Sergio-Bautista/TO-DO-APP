@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
 
     <h1>MY TASKS</h1>
     <ul class="tasks">
-    <% for(let i=0; i < info.length; i++) {%>
+        <!-- loops thought the array of objects and displays each object task name in the screen -->
+    <% info.forEach(task =>{%>
         <li class="task">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
-            <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
-            <span class='fa fa-trash'></span>
+            
+            
+            
+            <span><%= task.task %></span>
+            <!-- <span"><%= task._id %></span> -->
+            
+            <button class="deleteButton">
+            <i class="fa-solid fa-circle-check"></i>
+            </button>
+            
+           <button class="deleteButton">
+            <i class="fa-solid fa-trash-can"></i>
+            </button>
+
+            
+
         </li>
-    <% } %>
+    <% }) %>
     </ul>
 
+    <!-- form to add a new task -->
     <form action="/addTask" method="POST">
         <input type="text" placeholder="Add a new task..." name="task">
         <input type="submit">
     </form>
 
-    <form action="/deleteTask" method="DELETE">
-        <input type="text" placeholder="delete a task..." name="task">
-        <input type="submit">
-    </form>
+        <!-- input field and button to delete a task -->
+        <!-- <input id="input" type="text" placeholder="delete a task..." name="task">
+        <input id="deleteTask" type="submit"> -->
     
     
-    
-
-    <!-- <script src='js/main.js'></script> -->
+    <!-- loads the client main.js file in the 'public' folder -->
+    <script src='/main.js'></script>
 
     
 </body>

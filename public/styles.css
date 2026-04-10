@@ -1,0 +1,14 @@
+.deleteButton {
+    background: none;      /* Removes the gray background */
+    border: none;          /* Removes the button border */
+    padding: 0;           /* Removes internal spacing */
+    cursor: pointer;      /* Makes it feel like a link/button on hover */
+    outline: inherit;     /* Removes the default focus ring */
+    
+    /* Optional: Slight hover effect so the user knows it's clickable */
+    transition: opacity 0.2s;
+}
+
+.deleteButton:hover {
+    opacity: 0.7;
+}
