@@ -57,22 +57,43 @@ app.delete("/deleteTask", (req, res) =>{
     
     const taskName = req.body.value;
 
-    db.collection('tasks').deleteMany({ task: taskName})
+    // db.collection('tasks').deleteMany({ task: taskName})
 
 
-    // db.collection('tasks').deleteOne({ task: req.body.value})
+    db.collection('tasks').deleteOne({ task: taskName})
 
     // once the task is deleted, respond to the client with json 
     .then(result => {
         console.log("task deleted")
-        console.log(req.body.value)
-        console.log(`deleted ${result.deletedCount}`)
         res.json("task deleted")
     })
     .catch(error => console.error(error))
 
 })
 
+// route to update task
+app.put("/completeTask", (req, res) => {
+
+    // gets the values from the fetch request
+    const completedTask = req.body.value
+    const taskName = req.body.task
+
+    // updates the task that matches the name
+    const tasks = db.collection('tasks')
+    .updateOne(
+        // filters tasks by name first
+    {task: taskName},
+    // sets the completed value from false to true
+    { $set: {
+    completed: completedTask
+    }})
+
+    tasks.then( () =>{
+        console.log("Completed task")
+        res.json("Task Completed")
+    }).catch(error => console.error(error))
+
+})
 
 // makes the server listen
 app.listen(PORT, () =>{
