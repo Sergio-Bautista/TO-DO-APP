@@ -1,4 +1,4 @@
-.deleteButton {
+.deleteButton, .completedButton {
     background: none;      /* Removes the gray background */
     border: none;          /* Removes the button border */
     padding: 0;           /* Removes internal spacing */
@@ -10,5 +10,9 @@
 }
 
 .deleteButton:hover {
+    opacity: 0.7;
+}
+
+.completedButton:hover{
     opacity: 0.7;
 }
