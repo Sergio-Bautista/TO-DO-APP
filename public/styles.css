@@ -1,3 +1,14 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+h1{
+    text-align: start;
+}
+
+
 .deleteButton, .completedButton {
     background: none;      /* Removes the gray background */
     border: none;          /* Removes the button border */
@@ -7,6 +18,7 @@
     
     /* Optional: Slight hover effect so the user knows it's clickable */
     transition: opacity 0.2s;
+    font-size: 25px;
 }
 
 .deleteButton:hover {
@@ -15,4 +27,82 @@
 
 .completedButton:hover{
     opacity: 0.7;
+}
+
+
+.tasks{
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px 30px;
+    align-items: flex-start;
+    font-size: 30px;
+}
+
+#inputTask{
+    width: 75%;
+    /* font-family: inherit; */
+    font-size: 20px;
+    padding: 12px 11px;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d6db;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container{
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  gap: 8px;
+}
+
+#inputTask::placeholder{
+    color: #9ca3af;
+}
+#inputTask:focus{
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130, 246, 0.35);
+}
+
+
+button {
+  width: auto;
+  height: 47px;
+  background: #ffffff;
+  color: #1a1a2e;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 21px;
+  border-width: 2px;
+  border-color: #1a1a2e;
+  border-style: solid;
+  padding: 12px 28px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  user-select: auto;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+button:hover {
+  transform: none;
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+button:active {
+  transform: scale(0.96);
 }
