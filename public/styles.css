@@ -4,10 +4,31 @@
 }
 
 
-h1{
-    text-align: start;
+.task.completed{
+    /* text-decoration: line-through solid green 3px; */
+    /* color: #94a3b8; */
+    /* color: #a7f3d0; */
+    /* opacity: 0.5; */
+    background-color: #475569;
 }
 
+.task.completed .completedButton i {
+    color: green; /* Make checkmark solid white */
+}
+
+.task.completed .taskName {
+    text-decoration: line-through;
+    color: #94a3b8; /* Muted gray text */
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    min-height: 100vh;       /* Crucial: Makes the body as tall as the screen */
+    background-color: #0f172a; /* Optional: adds a nice background */
+}
 
 .deleteButton, .completedButton {
     background: none;      /* Removes the gray background */
@@ -19,48 +40,108 @@ h1{
     /* Optional: Slight hover effect so the user knows it's clickable */
     transition: opacity 0.2s;
     font-size: 25px;
+    color: #ffffff;
+    opacity: 0.9;
+    
 }
 
 .deleteButton:hover {
-    opacity: 0.7;
+    opacity: 0.9;
+    color: red;
 }
 
 .completedButton:hover{
-    opacity: 0.7;
+    opacity: 0.9;
+    color: green;
 }
 
+.container > h1{
+    color: #ffffff;
+    opacity: 0.9;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
 
 .tasks{
-    border-radius: 30px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     flex-direction: column;
-    gap: 10px 30px;
-    align-items: flex-start;
-    font-size: 30px;
+    /* gap: 10px 30px; */
+    align-items: stretch;
+    font-size: 20px;
+    color: #ffffff;
+    opacity: 0.9;
+    width: 100%;
+    margin: 0;
+    max-width: 600px;
+    justify-content: center;
+    list-style: none;
+    margin-left: -20px;
+    /* padding: 10px; */
+}
+
+.task{
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    /* margin: 0; */
+    align-items: center;
+    /* margin-bottom: 10px; */
 }
 
 #inputTask{
-    width: 75%;
-    /* font-family: inherit; */
+    flex-grow: 1;
     font-size: 20px;
     padding: 12px 11px;
     border-radius: 50px;
-    background: #ffffff;
+    background: rgb(255, 255, 255, 0.9);
     color: #111827;
     border: 1px solid #d1d6db;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 0px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+.buttons:active{
+    transform: scale(1);
 }
 
-.container{
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: stretch;
-  gap: 8px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    
+    /* Slightly lighter than the body to create depth */
+    background-color: #1e293b; 
+    
+    /* The Border: A thin, semi-transparent line */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 20px;
+    
+    /* The Box Shadow: A deep, soft shadow to make it 'pop' */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    
+    color: #f8fafc; /* Ensures all text is off-white for readability */
+}
+
+
+.input-row form{ 
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 #inputTask::placeholder{
@@ -72,20 +153,21 @@ h1{
 }
 
 
-button {
+.input-row button {
   width: auto;
-  height: 47px;
+  height: 50px;
   background: #ffffff;
+  opacity: 0.9;
   color: #1a1a2e;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.5px;
   border-radius: 21px;
   border-width: 2px;
   border-color: #1a1a2e;
   border-style: solid;
-  padding: 12px 28px;
+  padding: 10px 22px;
   transition: all 0.2s ease;
   cursor: pointer;
   display: inline-flex;
@@ -97,12 +179,12 @@ button {
   line-height: 1;
 }
 
-button:hover {
+.input-row button:hover {
   transform: none;
   background: #1a1a2e;
   color: #ffffff;
 }
 
-button:active {
-  transform: scale(0.96);
+.input-row button:active {
+  transform: scale(1);
 }
