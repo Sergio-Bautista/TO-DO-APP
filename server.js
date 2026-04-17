@@ -53,13 +53,10 @@ app.post("/addTask", (req, res) => {
 
 // delete a task route 
 app.delete("/deleteTask", (req, res) =>{
-    // looks for the value of the input in the html/ejs file in the db and removes it 
     
+    // stores the task name the user inputs for the task
     const taskName = req.body.value;
-
-    // db.collection('tasks').deleteMany({ task: taskName})
-
-
+    // looks for the value of the input in the html/ejs file in the db and removes it 
     db.collection('tasks').deleteOne({ task: taskName})
 
     // once the task is deleted, respond to the client with json 
@@ -90,7 +87,7 @@ app.put("/completeTask", (req, res) => {
 
     tasks.then( () =>{
         console.log("Completed task")
-        res.json("Task Completed")
+        res.json("Update Successful")
     }).catch(error => console.error(error))
 
 })
