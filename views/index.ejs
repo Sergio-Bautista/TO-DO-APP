@@ -9,42 +9,41 @@
 </head>
 <body>
 
-    <h1>MY TASKS</h1>
+    <div class="container">
+
+        <h1>MY TASKS</h1>
+    <!-- form to add a new task -->
+   <div class="input-row">
+     <form action="/addTask" method="POST">
+        <input id="inputTask" type="text" placeholder="Add a new task..." name="task">
+        <button type="submit">Add Task</button>
+    </form>
+   </div>
+
     <ul class="tasks">
         <!-- loops thought the array of objects and displays each object task name in the screen -->
     <% info.forEach(task =>{%>
-        <li class="task">
+        <!-- checks if the task element has the class of completed or not  -->
+        <li class="task <%=task.completed ? 'completed' : '' %> ">
+                        
+            <span class="taskName"><%= task.task %></span>
             
-            
-            
-            <span><%= task.task %></span>
-            <!-- <span"><%= task._id %></span> -->
-            
-            <button class="deleteButton">
-            <i class="fa-solid fa-circle-check"></i>
+            <div class="buttons">
+            <button class="completedButton">
+                <!-- adds the button images -->
+            <i class="fa-regular fa-circle-check"></i>
             </button>
-            
-           <button class="deleteButton">
+            <button class="deleteButton">
+                <!-- adds the button images -->
             <i class="fa-solid fa-trash-can"></i>
             </button>
-
-            
+            </div>
 
         </li>
     <% }) %>
     </ul>
-
-    <!-- form to add a new task -->
-    <form action="/addTask" method="POST">
-        <input type="text" placeholder="Add a new task..." name="task">
-        <input type="submit">
-    </form>
-
-        <!-- input field and button to delete a task -->
-        <!-- <input id="input" type="text" placeholder="delete a task..." name="task">
-        <input id="deleteTask" type="submit"> -->
     
-    
+    </div>
     <!-- loads the client main.js file in the 'public' folder -->
     <script src='/main.js'></script>
 
