@@ -59,8 +59,6 @@ When a user adds or updates a task:
 
 ![Architecture Diagram](/assets/architectureDiagram.png)
 
-📄 [View Full Architecture Documentation](./ARCHITECTURE.md)
-
 ---
 
 ## 📚 Documentation
