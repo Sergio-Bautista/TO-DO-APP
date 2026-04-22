@@ -53,7 +53,16 @@ When a user adds or updates a task:
    ```bash
    http://localhost:7000
 
-## 📚 Documentation
+---
 
+## 🏗️ Architecture Preview
+
+![Architecture Diagram](./assets/architecture.png)
+
+📄 [View Full Architecture Documentation](./ARCHITECTURE.md)
+
+---
+
+## 📚 Documentation
 - 📄 [Backend Docs](./BACKEND.md)
 - 🏗️ [Architecture](./ARCHITECTURE.md)
