@@ -57,7 +57,7 @@ When a user adds or updates a task:
 
 ## 🏗️ Architecture Preview
 
-![Architecture Diagram](./assets/architecture.png)
+![Architecture Diagram](/assets/architectureDiagram.png)
 
 📄 [View Full Architecture Documentation](./ARCHITECTURE.md)
 
