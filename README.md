@@ -52,3 +52,8 @@ When a user adds or updates a task:
 5. Open  your browser and go to:
    ```bash
    http://localhost:7000
+
+## 📚 Documentation
+
+- 📄 [Backend Docs](./BACKEND.md)
+- 🏗️ [Architecture](./ARCHITECTURE.md)
