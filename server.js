@@ -24,6 +24,7 @@ MongoClient.connect(mongoURL)
     console.log(`connected to ${dbName} Database`);
     db = client.db(dbName)
 })
+.catch(error => console.error(error))
 
 // root route 
 app.get("/", (req, res) =>{

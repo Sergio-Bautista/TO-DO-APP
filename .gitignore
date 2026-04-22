@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+
+# Environment variables (SENSITIVE)
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Backup files (like the README.md~ in your screenshot)
+*~
+*.swp
