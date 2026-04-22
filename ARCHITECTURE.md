@@ -1,5 +1,8 @@
 # 🏗️ System Architecture
 
+![Architecture Diagram](./assets/architecture.png)
+
+
 ## 📌 Overview
 
 This document explains how different components of the To-Do application interact with each other.
