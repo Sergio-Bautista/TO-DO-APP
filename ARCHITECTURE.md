@@ -1,6 +1,6 @@
 # 🏗️ System Architecture
 
-![Architecture Diagram](./assets/architecture.png)
+![Architecture Diagram](/assets/architectureDiagram.png)
 
 
 ## 📌 Overview
